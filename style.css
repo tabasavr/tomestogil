@@ -1,0 +1,121 @@
+:root {
+    color-scheme: dark;
+    
+    --background-color: light-dark(rgb(252 248 242), rgb(19 19 20));
+    --bg-surface-container-color: rgb(31 32 33);
+    --bg-surface-container-high-color: rgb(42 42 43);
+    --bg-surface-container-highest-color: rgb(52 53 54); 
+
+    --border-outline-variant-color: rgb(68 71 76);
+
+    --text-primary-color: rgb(187 201 220);
+    --text-on-surface-color: rgb(228 226 227);
+    --text-on-surface-variant-color: rgb(196 198 204);
+
+    --max-width: 1280px;
+
+    /* error bubble style */
+    --text-error-color: rgb(255 180 171);
+    --text-on-error-color: rgb(255 218 214);
+    --bg-error-color: rgb(69 10 10 / 0.4);
+    --border-error-color: rgb(255 180 171 / 0.2);
+
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+}
+
+.content {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+h1 {
+    color: var(--text-primary-color);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.content-margin {
+    margin-bottom: 2rem;
+}
+
+.table-container {
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-outline-variant-color);
+    background-color: var(--bg-surface-container-color);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: var(--bg-surface-container-high-color);
+    border-bottom: 1px solid var(--border-outline-variant-color);
+}
+
+th {
+    color: var(--text-primary-color);
+    padding: 1rem 1.5rem;
+}
+
+tbody > tr:hover {
+    background-color: var(--bg-surface-container-highest-color);
+}
+
+td {
+    color: var(--text-on-surface-color);
+    padding: 1rem 1.5rem;
+}
+
+td:first-child {
+    font-weight: 700;
+}
+
+.legal {
+    color: var(--text-on-surface-variant-color);
+    opacity: 50%;
+    font-size: 0.75rem;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    background-color: var(--bg-error-color);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-error-color);
+
+    color: var(--text-on-error-color);
+
+    padding: 1rem;
+}
+
+.error > .icon {
+    color: var(--text-error-color);
+}

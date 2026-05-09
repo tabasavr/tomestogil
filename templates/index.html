@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tomes to Gil</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/table-sort-js/table-sort.js"></script>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=warning" />
+    </head>
+    <body>
+        <header>
+            <div class="content">
+                <h1>
+                    TOMES TO GIL
+                </h1>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="error content-margin">
+                <span class="material-symbols-outlined icon">warning</span>
+                <span>Website is under construction. Currently only Japan DC market data is available. Last updated: {{ last_update_time }}</span>
+            </div>
+
+            <div class="table-container">
+                <table id="prices" class="table-sort table-arrows">
+                    <thead>
+                        <tr>
+                            {% for column_name in columns %}
+                            <!-- TODO: check with library dev and fix arrows position-->
+                            <th scope="col">{{ column_name }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    {% for item in items %}
+                    <tr>
+                        {% for elem in item %}
+                        <td>{{ elem }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <div class="content">
+                <p class="legal">
+                    FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
+                    <br>
+                    © SQUARE ENIX
+                    <br>
+                    Tomes to Gil is not affiliated with Square Enix.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
