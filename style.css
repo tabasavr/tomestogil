@@ -57,6 +57,17 @@ footer {
     padding-bottom: 2rem;
 }
 
+footer .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.github {
+    color: var(--text-on-surface-color);
+    flex-shrink: 0;
+}
+
 .content-margin {
     margin-bottom: 2rem;
 }
