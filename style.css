@@ -65,7 +65,7 @@ footer {
     border-radius: 0.5rem;
     border: 1px solid var(--border-outline-variant-color);
     background-color: var(--bg-surface-container-color);
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 table {
