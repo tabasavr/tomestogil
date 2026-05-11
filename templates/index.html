@@ -31,10 +31,13 @@
                 <table id="prices" class="table-sort table-arrows">
                     <thead>
                         <tr>
-                            {% for column_name in columns %}
                             <!-- TODO: check with library dev and fix arrows position-->
-                            <th scope="col">{{ column_name }}</th>
-                            {% endfor %}
+                            <th scope="col">Name</th>
+                            <th scope="col">Tome Price</th>
+                            <th scope="col">Tome Currency</th>
+                            <th scope="col" class="order-by-desc">MB Price</th>
+                            <th scope="col" class="order-by-desc">Daily Volume</th>
+                            <th scope="col" class="order-by-desc onload-sort">Profit per tomestone</th>
                         </tr>
                     </thead>
                     {% for item in items %}

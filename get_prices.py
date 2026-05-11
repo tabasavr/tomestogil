@@ -67,15 +67,6 @@ def main():
     with open("universalis.json", "r") as universalis_file:
         market_data = json.load(universalis_file)
 
-    table_columns = [
-        "Name",
-        "Tome Price",
-        "Tome Currency",
-        "MB Price",
-        "Daily Volume",
-        "Profit per tomestone",
-    ]
-
     table_rows = []
     processed_offers = set()
     for received_items, price in tomestones_items:
@@ -140,7 +131,7 @@ def main():
     with open("index.html", "w") as output_file:
         output_file.write(
             template.render(
-                columns=table_columns, items=table_rows, last_update_time=last_updated
+                items=table_rows, last_update_time=last_updated
             )
         )
 
