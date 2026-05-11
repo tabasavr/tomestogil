@@ -35,7 +35,7 @@ def main():
         items = json.load(items_mapping_file)
 
     with open("tomestones_mapping.json") as tomestones_mapping_file:
-        tomestones_names = json.load(tomestones_mapping_file)
+        tomestones_mapping = json.load(tomestones_mapping_file)
 
     all_item_ids = list(
         set(int(item_id) for (items, _) in tomestones_items for item_id in items)
@@ -90,7 +90,8 @@ def main():
             item_name = f"{items[item_id]['en']} x{quantity}"
 
         tomestone_id, tomestone_price = next(iter(price.items()))
-        tomestone_name = tomestones_names[tomestone_id]["name"]
+        tomestone_name = tomestones_mapping[tomestone_id]["name"]
+        tomestone_icon = get_icon_url(tomestones_mapping[tomestone_id]["icon"])
 
         offer_key = (item_id, quantity, tomestone_id, tomestone_price)
         if offer_key in processed_offers:
@@ -121,6 +122,7 @@ def main():
                 mb_price,
                 volume,
                 profit_per_tome,
+                tomestone_icon,
             )
         )
 
@@ -137,6 +139,9 @@ def main():
             )
         )
 
+def get_icon_url(icon: int) -> str:
+    base = (icon // 1000) * 1000
+    return f"https://v2.xivapi.com/api/asset?format=png&path=ui/icon/{base:06d}/{icon:06d}.tex"
 
 if __name__ == "__main__":
     main()

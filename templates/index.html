@@ -33,18 +33,29 @@
                     <thead>
                         <tr>
                             <th scope="col"><div>Name</div></th>
-                            <th scope="col"><div>Tome Price</div></th>
-                            <th scope="col"><div>Tome Currency</div></th>
-                            <th scope="col" data-sort-reverse><div>MB Price</div></th>
+                            <th scope="col"><div>Vendor Price</div></th>
+                            <th scope="col" data-sort-reverse><div>Marketboard Price</div></th>
                             <th scope="col" data-sort-reverse><div>Daily Volume</div></th>
                             <th scope="col" data-sort-default data-sort-reverse><div>Profit per tomestone</div></th>
                         </tr>
                     </thead>
                     {% for item in items %}
                     <tr>
-                        {% for elem in item %}
-                        <td>{{ elem }}</td>
-                        {% endfor %}
+                        <td>{{ item[0] }}</td>
+                        <td data-sort="{{ item[1]}}">
+                            <div>
+                                {{ item[1] }}
+                                <img src="{{ item[6] }}" alt="{{ item[2] }}" title="{{ item[2] }}" class="currency"/>
+                            </div>
+                        </td>
+                        <td data-sort="{{ item[3]}}">
+                            <div>
+                                {{ item[3] }}
+                                <img src="https://v2.xivapi.com/api/asset?format=png&path=ui/icon/065000/065002.tex" alt="Gil" title="Gil" class="currency"/>
+                            </div>
+                        </td>
+                        <td><div>{{ item[4] }}</div></td>
+                        <td><div>{{ "{:.2f}".format(item[5]) }}</div></td>
                     </tr>
                     {% endfor %}
                 </table>

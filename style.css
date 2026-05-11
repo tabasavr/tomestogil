@@ -107,6 +107,18 @@ td:first-child {
     font-weight: 700;
 }
 
+td div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.25rem;
+}
+
+img.currency {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
 .legal {
     color: var(--text-on-surface-variant-color);
     opacity: 50%;
@@ -147,6 +159,7 @@ th[role=columnheader]:not([data-sort-method='none']) div::after {
 	-webkit-user-select: none;
 	user-select: none;
 	display: none;
+    margin-left: 0.5rem;
 }
 
 th[aria-sort=ascending]:not([data-sort-method='none']) div::after {
