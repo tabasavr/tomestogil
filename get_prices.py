@@ -124,6 +124,8 @@ def main():
             )
         )
 
+    table_rows.sort(key=lambda r: r[5], reverse=True)
+
     now_utc = datetime.datetime.now(datetime.UTC)
     last_updated = now_utc.strftime("%Y-%m-%d")
 
