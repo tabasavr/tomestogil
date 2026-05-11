@@ -8,7 +8,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script src="https://cdn.jsdelivr.net/npm/table-sort-js/table-sort.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/tristen/tablesort@5.7.1/dist/tablesort.min.js "></script>
+        <script src="https://cdn.jsdelivr.net/gh/tristen/tablesort@5.7.1/dist/sorts/tablesort.number.min.js "></script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=warning" />
     </head>
@@ -28,16 +29,15 @@
             </div>
 
             <div class="table-container">
-                <table id="prices" class="table-sort table-arrows">
+                <table id="prices">
                     <thead>
                         <tr>
-                            <!-- TODO: check with library dev and fix arrows position-->
-                            <th scope="col">Name</th>
-                            <th scope="col">Tome Price</th>
-                            <th scope="col">Tome Currency</th>
-                            <th scope="col" class="order-by-desc">MB Price</th>
-                            <th scope="col" class="order-by-desc">Daily Volume</th>
-                            <th scope="col" class="order-by-desc onload-sort">Profit per tomestone</th>
+                            <th scope="col"><div>Name</div></th>
+                            <th scope="col"><div>Tome Price</div></th>
+                            <th scope="col"><div>Tome Currency</div></th>
+                            <th scope="col" data-sort-reverse><div>MB Price</div></th>
+                            <th scope="col" data-sort-reverse><div>Daily Volume</div></th>
+                            <th scope="col" data-sort-default data-sort-reverse><div>Profit per tomestone</div></th>
                         </tr>
                     </thead>
                     {% for item in items %}
@@ -69,5 +69,7 @@
                 </a>
             </div>
         </footer>
+
+        <script>new Tablesort(document.getElementById('prices'));</script>
     </body>
 </html>

@@ -130,3 +130,29 @@ td:first-child {
 .error > .icon {
     color: var(--text-error-color);
 }
+
+/* Table sorting arrows */
+th[role=columnheader]:not([data-sort-method='none']) div {
+	cursor: pointer;
+    display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+th[role=columnheader]:not([data-sort-method='none']) div::after {
+	content: '';
+	border-width: 0.5rem 0.25rem 0;
+	border-style: solid;
+	border-color: var(--text-primary-color) transparent;
+	-webkit-user-select: none;
+	user-select: none;
+	display: none;
+}
+
+th[aria-sort=ascending]:not([data-sort-method='none']) div::after {
+	border-width: 0 0.25rem 0.5rem;
+}
+
+th[aria-sort]:not([data-sort-method='none']) div::after {
+    display: inherit;
+}
