@@ -18,9 +18,6 @@ SPECIAL_SHOP_URL = "https://raw.githubusercontent.com/xivapi/ffxiv-datamining/re
 logger = logging.getLogger(__name__)
 
 
-# todo: investigate item_id 50977
-
-
 def main():
     logging.basicConfig(level=logging.INFO, filename="log.log", filemode="w")
 
@@ -46,6 +43,11 @@ def main():
                     continue
 
                 item = items[item_id]
+                if len(str(item["Name"]).strip()) == 0:
+                    # Added because of item 50977 in "Phantom Weapon Materials Exchange"
+                    logger.warning("Received item has empty name")
+                    continue
+
                 if item["IsUntradable"] == "True":
                     # logger.info(f"Untradable item: {item["Name"]}")
                     continue
