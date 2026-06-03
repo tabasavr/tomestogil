@@ -1,24 +1,24 @@
 :root {
-    color-scheme: dark;
+    color-scheme: light dark;
     
     --background-color: light-dark(rgb(252 248 242), rgb(19 19 20));
-    --bg-surface-container-color: rgb(31 32 33);
-    --bg-surface-container-high-color: rgb(42 42 43);
-    --bg-surface-container-highest-color: rgb(52 53 54); 
+    --bg-surface-container-color: light-dark(rgb(255 255 255), rgb(31 32 33));
+    --bg-surface-container-high-color: light-dark(rgb(246 243 245), rgb(42 42 43));
+    --bg-surface-container-highest-color: light-dark(rgb(240 237 239), rgb(52 53 54)); 
 
-    --border-outline-variant-color: rgb(68 71 76);
+    --border-outline-variant-color: light-dark(rgb(198 198 205), rgb(68 71 76));
 
-    --text-primary-color: rgb(187 201 220);
-    --text-on-surface-color: rgb(228 226 227);
-    --text-on-surface-variant-color: rgb(196 198 204);
+    --text-primary-color: light-dark(rgb(0, 0, 0), rgb(187 201 220));
+    --text-on-surface-color: light-dark(rgb(27 27 29), rgb(228 226 227));
+    --text-on-surface-variant-color: light-dark(rgb(69 70 77), rgb(196 198 204));
 
     --max-width: 1280px;
 
     /* error bubble style */
-    --text-error-color: rgb(255 180 171);
-    --text-on-error-color: rgb(255 218 214);
-    --bg-error-color: rgb(69 10 10 / 0.4);
-    --border-error-color: rgb(255 180 171 / 0.2);
+    --text-error-color: light-dark(rgb(186 26 26), rgb(255 180 171));
+    --text-on-error-color: light-dark(rgb(147 0 10), rgb(255 218 214));
+    --bg-error-color: light-dark(rgb(255 218 214 / 0.4), rgb(69 10 10 / 0.4));
+    --border-error-color: light-dark(rgb(186 26 26 / 0.2), rgb(255 180 171 / 0.2));
 
     box-sizing: border-box;
     font-family: sans-serif;
